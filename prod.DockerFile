@@ -43,8 +43,8 @@ FROM nginx:stable-alpine
 
 # copy artifact build from the 'build environment'
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
-COPY default.conf /etc/nginx/conf.d/default.conf
+# COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
+# COPY default.conf /etc/nginx/conf.d/default.conf
 COPY ./publish/angular-docker /usr/share/nginx/html
 
 # expose port 80
